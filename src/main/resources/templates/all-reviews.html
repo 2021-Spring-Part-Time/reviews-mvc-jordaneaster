@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Media Review Site</title>
+</head>
+<body>
+<header>
+    <h1>Hip-Hop Reviews May 2021</h1>
+</header>
+
+<ul>
+    <li th:each="review: ${TotalReviews}"><a th:href="@{/review(id=${course.id})}" th:text="${review.title}"></a></li>
+</ul>
+</body>
+</html>
