@@ -1,16 +1,57 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/allReviews.css">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Media Review Site</title>
+    <title>The Original Kids Media</title>
+    <style type="text/css">
+        html{
+            background-image: url(images/warstories.jpg),url(images/fire.jpg);
+            background-size: 652px,752px;
+            background-repeat: no-repeat, repeat-x;
+            background-filter: opacity:1,0.6 ;
+        }
+        #classic{
+        font-family: brixton;
+        font-weight: bold;
+        color: red;
+        }
+        #sourceId{
+        font-style: oblique,
+        font-size: x-small;
+        }
+    </style>
 </head>
-<body>
-<header>
-    <h1>Hip-Hop Reviews May 2021</h1>
-</header>
 
-<ul>
-    <li th:each="review: ${TotalReviews}"><a th:href="@{/review(id=${course.id})}" th:text="${review.title}"></a></li>
-</ul>
+<body class="container">
+<header id="homepageHeader">
+    <h1 id="wom"> <span style="font-family: HK Grotesk Medium">War Stories</span></h1>
+    <h2 style="color: red">para la juventud</h2>
+    <h1 id="ypp"><span style="font-family: HK Grotesk Medium">war de` los millennials - a memoir</span></h1>
+</header>
+<main id="maincontent">
+    <div id="reviewDiv" th:each="review: ${TotalReviews}"><a style="font-weight: 900" th:href="@{/review(id=${review.id})}">
+        <img id="reviewImage" th:src="${review.imageURL}" th:text="${review.title}"></a>
+
+    </div>
+    <p id="litClassic">Featured Classic Literature of the Month Below!</p>
+    <div id="classic" style="color: white,font-family: agrandir tight thin, font-weight: bold ">
+        <a href="https://www.scrapbook.com/poems/doc/8894.html"><img id="api" src="images/api.jpg"><h1>A Parable Of Immortality</h1></a>
+    <p style="font-family agrandir tight thin">"Gone From My Sight", also known as the "Parable of Immortality"
+        and "What Is Dying" is a poem (or prose poem)
+        presumably written by the Rev. Luther F. Beecher (1813–1903),
+        cousin of Henry Ward Beecher and Harriet Beecher Stowe.</p>
+    <h2 id="sourceId" style="font-style: oblique, font-size:x-small">source:wiki</h2>
+    </div>
+    <img src="" alt="">
+</main>
+
+
+
+
+
+
+<footer id="footer">
+    <small>&copy Jordan Easter 2021</small>
+</footer>
 </body>
 </html>

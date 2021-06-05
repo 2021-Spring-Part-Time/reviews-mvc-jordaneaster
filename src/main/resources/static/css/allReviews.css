@@ -1,0 +1,57 @@
+.container{
+  padding: 5px;
+  border-radius: 18px;
+  margin: auto;
+  width: 100%;
+  display: grid;
+}
+#api{
+width:50%;
+height:auto;
+}
+
+#fire{
+width: 50%;
+height: auto;
+}
+#litClassic{
+color: red;
+font-family: Brixton;
+font-weight: Bold;
+}
+
+#homepageHeader{
+ background-color: #d7c22e;
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+#maincontent{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-rows: 1fr 1fr 1fr 1fr;
+}
+
+#reviewDiv{
+display:grid;
+grid-column: 2/3;
+}
+
+#reviewImage{
+width: 35%;
+height: auto;
+padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+

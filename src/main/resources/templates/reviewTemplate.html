@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/css/review.css">
+    <title th:text="${review.title}"> My Reviews </title>
+    <style>
+        body{
+    background-image: url(images/che.jpg);
+    background-size: 600px;
+    }
+    #navAside{
+    background-image: url(images/warstories.jpg);
+    }
+    #genreAside{
+    background-image: url(images/warstories.jpg);
+    background-size: cover;
+    }
+    .content {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 75%;
+  height: 75%;
+}
+
+.overlay {
+  position: absolute;
+  top: 10;
+  bottom: 10;
+  left: 5;
+  right: 75;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
+
+.content:hover .overlay {
+  opacity: 100;
+}
+.text {
+  color: white;
+  font-weight: 700;
+  font-size: 13.5px;
+  justify-content: space-around;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+   -webkit-animation: glow 7s ease-in-out infinite alternate;
+  -moz-animation: glow 7s ease-in-out infinite alternate;
+  animation: glow 7s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+    </style>
+
+</head>
+<body>
+<header id="reviewHead">
+    <h1 ><span style="font-family: HK Grotesk Medium">War Of The Millennials</span></h1>
+    <h2>a memoir</h2>
+    <nav id="navBar">
+        <button><a href="/all-reviews">Home</a></button>
+    </nav>
+</header>
+
+<div class="container">
+    <aside id="navAside">
+        <a href="/all-reviews">Reviews</a>
+    </aside>
+    <aside id="genreAside">
+        <h2 id="headGenre" th:text="${review.message}"></h2>
+    </aside>
+
+    <main id="mainSection">
+        <h2 th:text="${review.title}" id="title"></h2>
+    </main>
+    <div class="content">
+        <img src="images/tw2.jpg" class="image">
+        <div class="overlay">
+            <div class="text"><p th:text="${review.description}"></p></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
